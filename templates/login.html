@@ -1,0 +1,46 @@
+{% if message %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MINDWORKS</title>
+    <style>
+        /* color palette: #01321c (dark green), yellow, #66ff99 (seafoam green) */
+        body{ 
+            background-color: #01321c;
+            text-align: center;
+            font-size: 22px;
+        }
+        #header{
+            color: yellow;
+        }
+        form{
+            text-align: center;
+            color: #66ff99; 
+        }
+        #button{
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header">
+        LOGIN TO MINDWORKS
+    </h1>
+    <form action="/postlogin/" method="post"> <!-- form for login -->
+        {% csrf_token %}
+        Email:
+        <input type="email" name="email" placeholder="email@email.com" id="text_input" required />
+        <br />
+        Password:
+        <input type="password" name="password" placeholder="Password" id="text_input" required />
+        <br />
+        <input type="submit" value="Sign In" id="button" />
+        <input type="button" value="Sign Up" onclick="location.href='{% url 'signup' %}'" id="button"/>
+    </form>
+</body>
+</html>

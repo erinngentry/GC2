@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Mindworks Levels</title>
+    <style>
+        div{
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body> <!-- return for post-login page -->
+    Hi {{e}}! <br />
+    Here are the Mindworks levels: <br />
+    ...
+    <div>
+        <button type="button" onclick="location.href='{% url 'logout' %}'">Logout</button>
+    </div>
+</body>
+</html>
