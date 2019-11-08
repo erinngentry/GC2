@@ -1,1 +1,1 @@
-web: gunicorn mindworks.wsgi --log-file -
+web: python manage.py runserver
