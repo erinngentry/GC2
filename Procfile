@@ -1,1 +1,1 @@
-worker: python manage.py runserver
+web: gunicorn mindworks_wsgi.py --log-file -
