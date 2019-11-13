@@ -41,7 +41,7 @@ def postlogin(request):
     session_id=user['idToken']
     request.session['uid']=str(session_id)
 
-    return render(request, "main.html", {"e":email})
+    return render(request, "index.html", {"e":email})
 
 # logout function
 def logout(request):
