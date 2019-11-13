@@ -73,3 +73,6 @@ def postsignup(request):
     database.child("users").child(uid).child("details").set(data)
 
     return render(request, "login.html")
+#game function/page
+def game(request):
+    return render(request, "gameimport.html")
