@@ -1,1 +1,1 @@
-web: gunicorn mindworks.wsgi --log-file -
+web: gunicorn Mindworks.wsgi --log-file -
