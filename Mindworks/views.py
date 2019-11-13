@@ -80,4 +80,4 @@ def game(request):
 
 # user profile
 def home(request):
-    return render(request, 'main/index.html')
+    return render(request, 'profile.html')
