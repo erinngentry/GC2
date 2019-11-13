@@ -25,7 +25,9 @@ SECRET_KEY = 'ppmzw2(10me==ove80j-2@y*o#=v4s##)gv0hdl6v5+vqn%p@j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mindworks-1.herokuapp.com',
+]
 
 
 # Application definition
