@@ -26,5 +26,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('logout/', views.logout, name="logout"),
     path('signup/', views.signup, name="signup"),
-    path('postsignup/', views.postsignup, name="postsignup")
-]
+    path('postsignup/', views.postsignup, name="postsignup"),
+    path('game/', views.game, name="game")
+] + staticfiles_urlpatterns()
+
