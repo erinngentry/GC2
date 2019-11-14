@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm
 from django.urls import include, path
 from . import views
@@ -28,5 +31,7 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('postsignup/', views.postsignup, name="postsignup"),
     path('game/', views.game, name="game"),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
 

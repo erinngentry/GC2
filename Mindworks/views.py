@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib import auth
+from django.contrib.staticfiles import *
 import pyrebase
 
 config = {

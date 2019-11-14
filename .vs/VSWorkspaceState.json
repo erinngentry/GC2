@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Mindworks",
-    "\\scss",
-    "\\templates"
+    "\\static",
+    "\\static\\bootstrap",
+    "\\static\\bootstrap\\css"
   ],
-  "SelectedNode": "\\Mindworks\\views.py",
+  "SelectedNode": "\\Mindworks\\urls.py",
   "PreviewInSolutionExplorer": false
 }
