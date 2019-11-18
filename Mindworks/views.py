@@ -81,4 +81,4 @@ def game(request):
 
 # user profile
 def home(request):
-    return render(request, 'profile.html')
+    return render(request, "profile.html")

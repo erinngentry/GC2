@@ -1,5 +1,4 @@
-﻿{% load static %}
-{% if message %}
+﻿{% if message %}
 <script>
     alert('{{ message }}');
 </script>
@@ -38,7 +37,7 @@
             font-size: 24px;
         }
 
-        #signin, #signup {
+        #login, #signup {
             font-size: 30px;
             color: #01321c;
         }
@@ -55,6 +54,10 @@
         }
         .button:hover{
             background-color: #66ff99;
+        }
+
+        .button:active {
+            transform: translateY(4px);
         }
 
         #pass_reset{
@@ -83,10 +86,11 @@
             <input type="password" name="password" placeholder="Password" id="text_input" required />
 
             <br />
-            <input type="submit" id="signin" value="Sign In" class="button" />
+            <input type="submit" id="login" value="Sign In" class="button" />
             <input type="button" id="signup" value="Sign Up" onclick="location.href='{% url 'signup' %}'" class="button" />
     
         </form>
+    </div>
     <input type="button" id="pass_reset" value="Forgot Password" onclick="location.pathname='password_reset/'" class="button" />
 </body>
 </html>
