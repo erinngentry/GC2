@@ -37,7 +37,7 @@
             font-size: 24px;
         }
 
-        #login, #signup {
+        #button_text {
             font-size: 30px;
             color: #01321c;
         }
@@ -86,8 +86,8 @@
             <input type="password" name="password" placeholder="Password" id="text_input" required />
 
             <br />
-            <input type="submit" id="login" value="Sign In" class="button" />
-            <input type="button" id="signup" value="Sign Up" onclick="location.href='{% url 'signup' %}'" class="button" />
+            <input type="submit" id="button_text" value="Sign In" class="button" />
+            <input type="button" id="button_text" value="Sign Up" onclick="location.href='{% url 'signup' %}'" class="button" />
     
         </form>
     </div>

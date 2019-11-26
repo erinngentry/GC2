@@ -1,0 +1,96 @@
+﻿{% if message %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <title>MINDWORKS</title>
+    <style>
+        /* color palette: #01321c (dark green), yellow, #66ff99 (seafoam green) */
+        body {
+            background-color: #01321c;
+            text-align: center;
+            color: #66ff99;
+            font-size: 36px;
+        }
+
+        #header {
+            background-color: #026438;
+            text-shadow: 2px 2px black;
+        }
+
+        #header_text {
+            color: yellow;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            font-size: 100px;
+        }
+
+        #text_input{
+            border-radius: 4px;
+            margin: 4px;
+            font-size: 24px;
+        }
+
+        #login, #signup {
+            font-size: 30px;
+            color: #01321c;
+        }
+
+        .button {
+            text-shadow: 1px 1px black;
+            text-align: center;
+            background-color:  #026438;
+            border: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 4px;
+            font-weight: bold;
+        }
+        .button:hover{
+            background-color: #66ff99;
+        }
+
+        .button:active {
+            transform: translateY(4px);
+        }
+
+        #pass_reset{
+            color: #ff0055;
+            text-shadow: 1px 1px black;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 id="header_text">
+            LOGIN TO MINDWORKS
+        </h1>
+    </div>
+    <div id="form_content">
+        <form action="/postlogin/" method="post">
+            <!-- form for login -->
+            {% csrf_token %}
+
+            Email:
+            <input type="email" name="email" placeholder="email@email.com" id="text_input" required />
+            <br />
+            Password:
+            <input type="password" name="password" placeholder="Password" id="text_input" required />
+
+            <br />
+            <input type="submit" id="login" value="Sign In" class="button" />
+            <input type="button" id="signup" value="Sign Up" onclick="location.href='{% url 'signup' %}'" class="button" />
+    
+        </form>
+    </div>
+    <input type="button" id="pass_reset" value="Forgot Password" onclick="location.pathname='password_reset/'" class="button" />
+</body>
+</html>
