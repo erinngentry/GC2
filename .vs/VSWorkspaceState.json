@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Mindworks",
-    "\\static",
-    "\\static\\bootstrap",
-    "\\static\\bootstrap\\css"
+    "\\Mindworks"
   ],
-  "SelectedNode": "\\Mindworks\\urls.py",
+  "SelectedNode": "\\Mindworks",
   "PreviewInSolutionExplorer": false
 }
