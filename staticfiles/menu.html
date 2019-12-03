@@ -1,0 +1,94 @@
+{% load static %}
+{% if message %}
+<script>
+    alert('{{ message }}');
+</script>
+{% endif %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <title>MINDWORKS</title>
+    <style>
+        /* color palette: #01321c (dark green), yellow, #66ff99 (seafoam green) */
+        body {
+            background-color: #01321c;
+            text-align: center;
+            color: #66ff99;
+            font-size: 36px;
+        }
+
+        #header {
+            background-color: #026438;
+            text-shadow: 2px 2px black;
+        }
+
+        #header_text {
+            color: yellow;
+            font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+            font-size: 100px;
+        }
+
+        #text_input {
+            border-radius: 4px;
+            /*margin: 4px;*/
+            font-size: 50px;
+        }
+
+        #button_text_input {
+            font-size: 100px;
+            color: #01321c;
+        }
+
+        #variable_text {
+            font-size: 100px;
+            color: papayawhip;
+        }
+
+        .button {
+            text-shadow: 1px 1px black;
+            text-align: center;
+            background-color: #026438;
+            border: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 4px;
+            font-weight: bold;
+        }
+
+            .button:hover {
+                background-color: #66ff99;
+            }
+
+            .button:active {
+                transform: translateY(4px);
+            }
+
+        #pass_reset {
+            color: #ff0055;
+            text-shadow: 1px 1px black;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h2 id="header_text">
+            Hello, <em id="variable_text">{{e}}.</em>
+
+        </h2>
+    </div>
+    <div id="text_input">Please pick a menu option.</div>
+    <div>
+        <button id="button_text_input" class="button" onclick="location.pathname='/'">Play Levels</button>
+        <br />
+        <button id="button_text_input" class="button" onclick="location.pathname='game/'">Create Levels</button>
+        <br />
+        <button id="button_text_input" class="button" onclick="location.pathname='/'">Profile</button>
+
+    </div>
+</body>
+</html>

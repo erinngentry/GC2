@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ppmzw2(10me==ove80j-2@y*o#=v4s##)gv0hdl6v5+vqn%p@j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'mindworks-1.herokuapp.com',
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'Mindworks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,15 +134,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/'),
+    os.path.join(BASE_DIR, 'static'),
     'templates/',
-    'solid/'
 )
 
 
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mindworks_app'
-EMAIL_HOST_PASSWORD = 'mys3cr3tp4ssw0rd'
+EMAIL_HOST_USER = 'humindworks@gmail.com'
+EMAIL_HOST_PASSWORD = 'HUsemw2019'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Mindworks Team <noreply@example.com>'

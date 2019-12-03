@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Mindworks"
+    "\\Mindworks",
+    "\\templates"
   ],
-  "SelectedNode": "\\Mindworks",
+  "SelectedNode": "\\Mindworks\\settings.py",
   "PreviewInSolutionExplorer": false
 }

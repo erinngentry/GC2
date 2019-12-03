@@ -14,7 +14,7 @@ $("gameimport.html").ready(function () {
 $("td").click(function (e) {
     var userClicked = $(this).attr("id");
     console.log("button clicked");
-})
+});
 
 //button that determines grid size AxA
 function boxclick() {
@@ -41,7 +41,7 @@ function grid(rows, cols) {
     $("#container").empty().append(table);
     $("tr").css("height", size);
     $("td").css("color", "red").css("width", size);
-    table.on("click", "td", makepattern());
+    //table.on("click", "td", makepattern());
 
 }
 

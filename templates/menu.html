@@ -1,3 +1,4 @@
+{% load static %}
 {% if message %}
 <script>
     alert('{{ message }}');
@@ -9,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <title>MINDWORKS</title>
     <style>
         /* color palette: #01321c (dark green), yellow, #66ff99 (seafoam green) */
