@@ -1,36 +1,36 @@
 h1 {
-    text-align: center;
-    color: black;
+  text-align: center;
+  color: black;
 }
-
 table {
-    height: 525px;
-    width: 525px;
+  height: 525px;
+  width: 525px;
 }
-
 tr, td, table {
-    border-style: solid;
-    border-color: rgb(212, 250, 42);
-    border-width: 1px;
-    background-color: lightseagreen;
-    margin: auto;
-    margin-top: 20px;
+  border-style: solid;
+	border-color: rgb(212, 250, 42);
+  border-width: 1px;
+  background-color: lightseagreen;
+  margin: auto;
+  margin-top: 20px;
 }
-
 td {
-    transition: .3s background-color;
+  transition: .3s background-color;
 }
-
 td:hover {
-    background-color: rgb(212, 250, 42);
+  background-color: rgb(212, 250, 42);
+}
+button {
+  height: 25px;
+  width: 225px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  left: 40%;
+  margin-top: -40px;
 }
 
-button {
-    height: 25px;
-    width: 225px;
-    margin: 0 auto;
-    position: relative;
-    top: 50%;
-    left: 40%;
-    margin-top: -40px;
+td.clicked {
+  background-color:yellow;
+  color:red;
 }
