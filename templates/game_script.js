@@ -62,9 +62,11 @@ function makepattern(gridID){
         $(this).css('background-color', 'blue');
         
         var userClicked = gridID.id;
-        console.log("button clicked: " + userClicked);
-        //console.log(gridID.id);
-        //console.log(gridID.style.backgroundColor);
+        console.log("button clicked: " + $(this).attr('id'));
+
+        if ($(this).css("background-color") == "blue") {
+            console.log("this one");
+        }
         
     })
 }
