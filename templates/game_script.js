@@ -36,7 +36,7 @@ function grid(rows, cols) {
   $("#container").empty().append(table);
   $("tr").css("height", size);
   $("td").css("color", "red").css("width", size);
-	return blockOrder;
+	return blockOrder.id;
 }
 
 
