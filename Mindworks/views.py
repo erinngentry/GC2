@@ -21,8 +21,6 @@ database = firebase.database()
 
 # login function
 def login(request): 
-    user=authen.create_user_with_email_and_password(email, password)
-    uid = user['localId']
     return render(request, "login.html")
 
 # main page display for post login
