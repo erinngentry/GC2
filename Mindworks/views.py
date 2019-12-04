@@ -21,6 +21,8 @@ database = firebase.database()
 
 # login function
 def login(request): 
+    user=authen.create_user_with_email_and_password(email, password)
+    uid = user['localId']
     return render(request, "login.html")
 
 # main page display for post login
@@ -72,7 +74,6 @@ def postsignup(request):
 
     # add data to database under "users"
     database.child("users").child(uid).child("details").set(data)
-
     return render(request, "login.html")
 
 #game function/page
@@ -81,7 +82,12 @@ def game(request):
 
 # user profile
 def home(request):
-    return render(request, "profile.html")
+    user = database.child("users").get()
+    print(user.val())
+    
+    email=request.POST.get("email")
+    name=request.POST.get("name")
+    return render(request, "profile.html", {"email": email, "name": name})
 
 # levels
 def levels(request):

@@ -49,6 +49,8 @@ function grid(rows, cols) {
             console.log("assigning ID: " + gridID.id);
         }
     }
+
+    $(document.getElementsByName("MakePattern")).removeAttr("disabled")
   $("tr").css("height", size);
     //$("td").css("color", "red").css("width", size);
 
@@ -61,10 +63,19 @@ function makepattern(gridID){
 	console.log("make pattern button clicked");
     $('body').on('click', 'td', function (e) {
         $(this).css('background-color', 'blue');
+        $(this).css('disabled', true);
 
         //var userClicked = gridID.id;
         console.log("button clicked: " + $(this).attr('id'));
-        clickedCells.push($(this).attr('id'));console.log(clickedCells);
+        clickedCells.push($(this).attr('id'));
+        console.log(clickedCells);
     })
-    
+    $(document.getElementsByName("HidePattern")).removeAttr("disabled");  
+}
+
+function hidepattern(gridID) {
+    console.log("finish");
+    if ($('td').css("background-color") == "rgb(0, 0, 255)") {
+        $(document.getElementsByTagName('table')).hide();
+    }
 }
