@@ -1,7 +1,7 @@
 
 @font-face {
    font-family: MindWorksHead;
-   src: url("/Users/jasminecameron/Downloads/webfontkit-20191125-145940/tarrgetengravedregular-j7ee-webfont.woff2 ") format('woff2');
+   src: url("erringentry/GC2/templates/tarrgetengravedregular-j7ee-webfont.woff2 ") format('woff2');
 }
 
 @font-face {
@@ -15,7 +15,7 @@ h1 {
 }
 
 body{
-  background-image: url("/Users/jasminecameron/Downloads/MindWorksBackground.jpg")
+  background-image: url("erringentry/GC2/templates/MindWorksBackground.jpg")
 }
 
 p{
