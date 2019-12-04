@@ -82,3 +82,7 @@ def game(request):
 # user profile
 def home(request):
     return render(request, "profile.html")
+
+# levels
+def levels(request):
+    return render(request, "levels.html")

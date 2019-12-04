@@ -33,6 +33,7 @@ urlpatterns = [
     path('postsignup/', views.postsignup, name="postsignup"),
     path('game/', views.game, name="game"),
     path('profile/', views.home, name="home"),
+    path('levels/', views.levels, name="levels"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

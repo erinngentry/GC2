@@ -1,5 +1,6 @@
 var createdpattern = [];
 var userpattern = [];
+var clickedCells = [];
 var level = 0;
 
 $("gameimport.html").ready(function() {
@@ -49,7 +50,7 @@ function grid(rows, cols) {
         }
     }
   $("tr").css("height", size);
-    $("td").css("color", "red").css("width", size);
+    //$("td").css("color", "red").css("width", size);
 
 
 	return gridID;
@@ -60,13 +61,10 @@ function makepattern(gridID){
 	console.log("make pattern button clicked");
     $('body').on('click', 'td', function (e) {
         $(this).css('background-color', 'blue');
-        
-        var userClicked = gridID.id;
-        console.log("button clicked: " + $(this).attr('id'));
 
-        if ($(this).css("background-color") == "blue") {
-            console.log("this one");
-        }
-        
+        //var userClicked = gridID.id;
+        console.log("button clicked: " + $(this).attr('id'));
+        clickedCells.push($(this).attr('id'));console.log(clickedCells);
     })
+    
 }

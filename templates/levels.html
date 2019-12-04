@@ -40,7 +40,7 @@
         }
 
         #button_text_input {
-            font-size: 100px;
+            font-size: 50px;
             color: #01321c;
         }
 
@@ -53,7 +53,7 @@
             text-shadow: 1px 1px black;
             text-align: center;
             background-color: #026438;
-            border: none;
+            border: thin;
             border-radius: 4px;
             display: inline-block;
             margin: 4px;
@@ -78,17 +78,14 @@
 <body>
     <div id="header">
         <h2 id="header_text">
-            Hello, <em id="variable_text">{{e}}.</em>
-
+            Created Levels
+            <button id="button_text_input" class="button" onclick="location.pathname='postlogin/'">Back</button>
         </h2>
     </div>
-    <div id="text_input">Please pick a menu option.</div>
+    <div id="text_input">Please pick a level.</div>
     <div>
-        <button id="button_text_input" class="button" onclick="location.pathname='levels/'">Play Levels</button>
-        <br />
-        <button id="button_text_input" class="button" onclick="location.pathname='game/'">Create Levels</button>
-        <br />
-        <button id="button_text_input" class="button" onclick="location.pathname='profile/'">Profile</button>
+
+        
 
     </div>
 </body>
