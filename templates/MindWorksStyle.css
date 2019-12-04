@@ -1,0 +1,46 @@
+
+@font-face {
+   font-family: MindWorksHead;
+   src: url("/Users/jasminecameron/Downloads/webfontkit-20191125-145940/tarrgetengravedregular-j7ee-webfont.woff2 ") format('woff2');
+}
+
+@font-face {
+   font-family: Veranda, Geneva, sans-serif;
+}
+
+h1 {
+   font-family: MindworksHead;
+   color: white;
+   font-size: 600%;
+}
+
+body{
+  background-image: url("/Users/jasminecameron/Downloads/MindWorksBackground.jpg")
+}
+
+p{
+  font-family: MindworksBody;
+  font-size: 40px;
+  color: white;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: MindworksBody;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: black;
+  color: white;
+  border: 2px solid #4CAF50;
+}
