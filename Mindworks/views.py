@@ -20,14 +20,8 @@ authen = firebase.auth()
 database = firebase.database()
 
 # login function
-def login(request): 
-    session_id = request.session.get('uid')
-    
-    if(session_id):
-        return render(request, "login.html")
-    else:
-        message="Invalid Credentials"
-        return render(request, "login.html", {"message":message})
+def login(request):
+    return render(request, "login.html")
 
 # main page display for post login
 def postlogin(request):
