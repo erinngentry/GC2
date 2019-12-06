@@ -1,6 +1,7 @@
 var createdpattern = [];
 var userpattern = [];
 var clickedCells = [];
+var level_name = ""
 var level = 0;
 
 $("gameimport.html").ready(function() {
@@ -62,20 +63,32 @@ function grid(rows, cols) {
 function makepattern(gridID){
 	console.log("make pattern button clicked");
     $('body').on('click', 'td', function (e) {
-        $(this).css('background-color', 'blue');
-        $(this).css('disabled', true);
+        $(this).css('background-color', 'yellow');
 
         //var userClicked = gridID.id;
         console.log("button clicked: " + $(this).attr('id'));
         clickedCells.push($(this).attr('id'));
-        console.log(clickedCells);
     })
-    $(document.getElementsByName("HidePattern")).removeAttr("disabled");  
+    $(document.getElementsByName("HidePattern")).removeAttr("disabled"); 
+    console.log(clickedCells)
+    return clickedCells.id
 }
 
-function hidepattern(gridID) {
-    console.log("finish");
-    if ($('td').css("background-color") == "rgb(0, 0, 255)") {
-        $(document.getElementsByTagName('table')).hide();
+function hidepattern(clickedCells) {
+    //if ($('td').css("background-color") == "yellow") {
+    //    $(document.getElementsByTagName('table')).hide();
+    //}
+    console.log("finished");
+    $('BoxClick', 'MakePattern','GridSize').prop("disabled", true);
+    $('table').css("display", "none");
+
+    level_name = prompt("Name this level: ");
+    console.log(name, clickedCells.id)
+}
+
+function play(clickedCells) {
+    console.log(clickedCells)
+    if ($('td').id == clickedCells.id) {
+        $('td').css("background-color", "blue")
     }
 }

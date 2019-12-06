@@ -1,8 +1,3 @@
-{% if message %}
-<script>
-    alert('{{ message }}');
-</script>
-{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +38,18 @@
             font-size: 100px;
             color: #01321c;
         }
+        
+        #button_text {
+            font-size: 30px;
+            color: #01321c;
+            position: absolute;
+            top: 0px; 
+            right: 20px;
+        }
 
         #variable_text {
             font-size: 100px;
-            color: papayawhip;
+            color: yellow;
         }
 
         .button {
@@ -78,7 +81,8 @@
 <body>
     <div id="header">
         <h2 id="header_text">
-            Hello, <em id="variable_text">{{e}}.</em>
+            Hello, <em id="variable_text">{{name}}.</em>
+            <button id="button_text" onclick="location.pathname='/'" class="button">Logout</button>
 
         </h2>
     </div>

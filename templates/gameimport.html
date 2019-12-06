@@ -12,16 +12,21 @@
 <body>
     <header id="header">
         <h1 id="header_text"> Create a Level </h1>
+        <button id="logout" onclick="location.pathname='/'" class="button">Logout</button>
     </header>
-    
-        <input type="button" class="button" id="button_text" value="Choose grid size" onclick="boxclick(this);" />
+        Press "Create Pattern" to make a pattern. Press "Finish" to save pattern.
+    <br />
+    <input type="button" class="button" id="button_text" name="GridSize" value="Grid Size" onclick="boxclick(this);" />
 
-        <input type="button" class="button" id="button_text" name="MakePattern" value="Create Pattern" onclick="makepattern(this);" disabled/>
-        <br />
-        <input type="button" class="button" id="button_text" name="HidePattern" value="Finish" onclick="hidepattern(this);" disabled/>
+    <input type="button" class="button" id="button_text" name="MakePattern" value="Create Pattern" onclick="makepattern(this);" disabled/>
+
+    <input type="button" class="button" id="button_text" name="HidePattern" value="Finish" onclick="hidepattern(this);" disabled/>
+    <br />
     
     <div id="container">
     </div>
+    <br />
+    <input type="button" class="button" id="button_text" name="BackToLogin" value="Back to Menu" onclick="location.pathname='postlogin/'" />
 
 </body>
 </html>

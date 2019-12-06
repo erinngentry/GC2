@@ -21,16 +21,20 @@ database = firebase.database()
 
 # login function
 def login(request): 
-    user=authen.create_user_with_email_and_password(email, password)
-    uid = user['localId']
-    return render(request, "login.html")
+    session_id = request.session.get('uid')
+    
+    if(session_id):
+        return render(request, "login.html")
+    else:
+        message="Invalid Credentials"
+        return render(request, "login.html", {"message":message})
 
 # main page display for post login
 def postlogin(request):
     # saves credentials of user logging in 
     email=request.POST.get('email')
     password=request.POST.get("password")
-
+    
     # checks authentication with try/except block
     # sends message if credentials are entered incorrectly
     try:
@@ -38,13 +42,22 @@ def postlogin(request):
     except:
         message="Invalid Credentials"
         return render(request, "login.html", {"message":message})
-    print(user['idToken'])
-
+    
     # requesting a session
     session_id=user['idToken']
     request.session['uid']=str(session_id)
 
-    return render(request, "menu.html", {"e":email})
+    account = authen.get_account_info(request.session['uid'])
+    account = account['users']
+    account = account[0]
+    account = account['localId']
+    account = str(account)
+
+    name = database.child("users").child(account).child("details").child("name").get().val()
+
+    print("session_id: " + session_id)
+    if(session_id == user['idToken']):
+        return render(request, "menu.html", {"e":email, "name": name})
 
 # logout function
 def logout(request):
@@ -74,7 +87,7 @@ def postsignup(request):
 
     # add data to database under "users"
     database.child("users").child(uid).child("details").set(data)
-    return render(request, "login.html")
+    return render(request, "login.html", name)
 
 #game function/page
 def game(request):
@@ -82,11 +95,15 @@ def game(request):
 
 # user profile
 def home(request):
-    user = database.child("users").get()
-    print(user.val())
-    
-    email=request.POST.get("email")
-    name=request.POST.get("name")
+    session_id = request.session.get('uid')
+    account = authen.get_account_info(session_id)
+    account = account['users']
+    account = account[0]
+    account = account['localId']
+    account = str(account)
+
+    email = database.child("users").child(account).child("details").child("email").get().val()
+    name = database.child("users").child(account).child("details").child("name").get().val()
     return render(request, "profile.html", {"email": email, "name": name})
 
 # levels
