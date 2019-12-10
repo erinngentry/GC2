@@ -26,20 +26,20 @@ def login(request):
 # main page display for post login
 def postlogin(request):
     # saves credentials of user logging in 
-    email=request.POST.get('email')
-    password=request.POST.get("password")
+    email = request.POST.get('email')
+    password = request.POST.get("password")
     
     # checks authentication with try/except block
     # sends message if credentials are entered incorrectly
     try:
-        user=authen.sign_in_with_email_and_password(email, password)
-    except:
-        message="Invalid Credentials"
+        user = authen.sign_in_with_email_and_password(email, password)
+    except: 
+        message = "Invalid Credentials"
         return render(request, "login.html", {"message":message})
     
     # requesting a session
-    session_id=user['idToken']
-    request.session['uid']=str(session_id)
+    session_id = user['idToken']
+    request.session['uid'] = str(session_id)
 
     account = authen.get_account_info(request.session['uid'])
     account = account['users']
@@ -62,15 +62,15 @@ def signup(request):
     return render(request, "signup.html")
 
 def postsignup(request):
-    name=request.POST.get('name')
-    email=request.POST.get('email')
-    password=request.POST.get("password")
+    name = request.POST.get('name')
+    email = request.POST.get('email')
+    password = request.POST.get("password")
 
     try: 
         # create new account
-        user=authen.create_user_with_email_and_password(email, password)
+        user = authen.create_user_with_email_and_password(email, password)
     except:
-        message="Account could not be created. Make sure account does not already exist."
+        message = "Account could not be created. Make sure account does not already exist."
         return render(request, "signup.html", {"message": message})
 
     # get localId of user. if issues, place under except block
